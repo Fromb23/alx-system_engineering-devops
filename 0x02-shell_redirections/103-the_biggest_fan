@@ -1,2 +1,2 @@
 #!/bin/bash
-awk -F'\t' '{print $1}' webserver.log | sort | uniq -c | sort -rn | head -n 11
+cut -f 1 webserver.log | sort | uniq -c | sort -rn | head -n 11
