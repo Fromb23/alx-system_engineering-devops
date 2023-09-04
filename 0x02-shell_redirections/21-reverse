@@ -1,2 +1,2 @@
-#!/bin/bash
-echo "Reverse input" | rev
+#!/bin/bas
+rev "Rombo"
