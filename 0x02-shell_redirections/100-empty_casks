@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{print $1}' input.log > temp1.txt && sort temp1.txt > temp2.txt && uniq -c temp2.txt > temp3.txt && sort -rn temp3.txt > temp4.txt && head -n 11 temp4.txt && rm temp1.txt temp2.txt temp3.txt temp4.txt
+find . -type f -empty -printf "%f\n" -o -type d -empty -printf "%f\n"
