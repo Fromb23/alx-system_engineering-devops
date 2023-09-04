@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -e 's/A/Z/g' -e 's/c/e/g'
+echo "Your input text" | tr 'Ac' 'Ze'
