@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "A sample string with c characters" | sed 's/A/Z/g; s/c/e/g'
+sed 's/A/Z/g; s/c/e/g' input.txt > output.txt
