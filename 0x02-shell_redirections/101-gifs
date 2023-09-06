@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | xargs ls -laS | sort -f -k1,1n -k9 | awk '{print $9}' | sed 's/\.[^.]*$//'
+find . -type f -name "*.gif" -exec ls -laS {} + | sort -f -k1,1n -k9
