@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+_count=0
+_string="Best School"
+while [ "$_count" -lt 10 ]; do
+if [ "$_count" = 9 ]; then
+echo "Hi"
+fi
+echo "$_string"
+((_count++))
+done
