@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Printing user password from /etc/passwd
+while IFS=: read -ra line;
+do
+	echo "${line[0]}":"${line[2]}":"${line[5]}"
+done < /etc/passwd
