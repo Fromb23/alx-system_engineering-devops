@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script is displaying FizzBuzz from 1-100 with coditional statements
+_number=1
+while [ "$_number" -lt 101 ]; do
+	if [ $((_number % 3))  -eq 0 ] && [ $((_number % 5)) -eq 0 ];
+	then
+		echo "FizzBuzz"
+	elif [ $((_number % 3)) -eq 0 ];
+	then
+		echo "Fizz"
+	elif [ $((_number % 5)) -eq 0 ];
+	then
+		echo "Buzz"
+	else
+		echo "$_number"
+	fi
+	((_number++))
+done
