@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #a linux command that shows all the processes and their hierarchy
 ps aux
-pstree
+pstree -p
