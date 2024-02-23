@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#print to infinity and after every 2 sec a character
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "I am invincible!!!"' SIGTERM
+done
