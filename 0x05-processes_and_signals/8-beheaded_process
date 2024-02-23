@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#a process that kills 7-highlighter
+pkill -9 -f 7-highlander
+trap exit
