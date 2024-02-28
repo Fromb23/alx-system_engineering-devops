@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#use netstat to get listening sockets and their associated PIDs
+netstat -l -p | grep 'LISTEN' | awk '{print $7}' | while read -r line; do
+pid=$(echo "$line" | cut -d'/' -f1)
+program=$(echo "$line" | cut -d'/' -f2-)
+#print PID, program name, and port
+echo "$pid, $program"
+done
