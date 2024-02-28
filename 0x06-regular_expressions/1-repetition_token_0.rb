@@ -8,5 +8,9 @@ end
 #Get the argument
 arg = ARGV[0]
 
-#Find all matches of rgex
-matches = arg.scan(/hbt*n/)
+#checks ifthe arg matches the regex
+if arg.match(/hbt*n/)
+  puts "Match is found."
+else
+  puts "No match"
+end
