@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#Display active IPv4 in my current machine
+ifconfig eth0 | grep 'inet' | awk '{print $2}' 
