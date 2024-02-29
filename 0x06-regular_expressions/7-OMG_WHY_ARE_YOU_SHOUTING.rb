@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/[A-z]+/
+puts ARGV[0].scan(/[A-Z]/).join
