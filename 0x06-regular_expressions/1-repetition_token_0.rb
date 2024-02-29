@@ -9,7 +9,7 @@ end
 arg = ARGV[0]
 
 #Fidn all matches of the rgex
-matches = arg.scan(/hbt+n/)
+matches = arg.scan(/hbt{2, 5}n/)
 
 #print the matches
 puts matches.join
