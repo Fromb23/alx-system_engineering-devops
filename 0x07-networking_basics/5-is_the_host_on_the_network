@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Check if an arg was passed
+if [ "$#" -eq 0 ];
+then
+	echo "Usage: $0 <IP_ADDRESS>"
+	exit 1
+fi
+
+#Get the IP address from the CL Argument
+ip_address="$1"
+
+#use the ping command with the -c option to send 5 packets
+ping -c 5 "$ip_address"
