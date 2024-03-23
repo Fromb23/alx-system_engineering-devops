@@ -1,0 +1,24 @@
+https://imgur.com/LQWI3FX
+
+Why Additional Elements are Added:
+	We add more servers and load balancers to make our system faster and more reliable.
+
+Firewalls:
+	Firewalls keep bad guys out of our system by watching the traffic coming in and going out.
+
+HTTPS for Traffic:
+	HTTPS keeps our users' data safe by scrambling it as it travels between their devices and our servers.
+
+Monitoring:
+	Monitoring tools keep an eye on our system's health and performance in real-time.
+
+Data Collection by Monitoring Tools:
+	Monitoring tools gather information about our system by checking things like how busy our servers are and how much data is flowing through them.
+
+Monitoring Web Server QPS:
+	We use monitoring tools to see how many requests our web server gets each second.
+
+Issues with the Infrastructure:
+	Putting too much work on our load balancers by decrypting all our traffic can slow things down.
+	Relying on just one MySQL server for writes is risky because if it goes down, we could lose important data.
+	Having identical servers might make our system vulnerable if something goes wrong with one component, it could affect all the servers.
