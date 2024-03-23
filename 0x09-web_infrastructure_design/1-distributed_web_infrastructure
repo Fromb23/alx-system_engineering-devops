@@ -1,0 +1,27 @@
+https://imgur.com/qjEOJ6M
+
+Addition of Additional Elements:
+
+We're adding more servers, load balancers, and database nodes to make our system stronger and handle more users without crashing.
+Each new piece we add boosts our system's power and makes it less likely to break if something goes wrong.
+Distribution Algorithm of Load Balancer:
+
+The load balancer spreads out the work evenly across all our servers.
+This helps make sure no single server gets too busy, keeping our system running smoothly.
+Active-Active vs. Active-Passive Setup:
+
+Our servers are set up to all work at the same time, which is called an Active-Active setup.
+This means they're all pitching in to help out, so if one server goes down, the others can keep things going.
+Primary-Replica Database Cluster:
+
+Our database is set up with one main server that handles writing data and several backup servers that help out with reading data.
+This keeps our data safe and makes it faster for users to access.
+Difference Between Primary and Replica Nodes:
+
+The main server handles writing data, while the backup servers help out by reading data.
+This setup keeps our system running smoothly and ensures we can handle lots of users at once.
+Issues with the Infrastructure:
+
+Our system has some weak spots, like not having enough backup servers and lacking security measures.
+This could make it easier for bad actors to cause problems or for our system to break down unexpectedly.
+Without good monitoring, we might not even notice there's a problem until it's too late.
