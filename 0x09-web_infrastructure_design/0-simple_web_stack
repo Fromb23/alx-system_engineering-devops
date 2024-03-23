@@ -1,0 +1,32 @@
+https://imgur.com/a/9eEYTYU
+
+1. What is a server
+	A server is a computer or sytem that  provides resources, data, services or programs to other computers called clients over the network
+
+2. Domain Name
+	It's a human friendly address, like www.foobar.com, that we use to visit websites, it changes the domain to its ip Address
+
+3. DNS Record
+	www is typically a DNS record that points to the IP address of the server where the website is hosted
+
+4. Web server(Nginx)
+	A web server display website content through a web browser. It processes incoming network requests over HTTP and other related protocols
+
+5. Application Server(Apache)
+	This server runs applications and connects them to the web server, allowing them to communicate with each other and with other systems
+
+6. Database (mySQL)
+	This stores data in an orgainized way to be easily accessed, managed and updated
+
+7. Communication
+	The server communicates with the user's computer using the HTTP(S) protocol
+
+Issues
+SPOF(single pnt of Failure)
+	Refers to a part of a system that, if it fails, with stop the entire system from working
+
+Downtime for Maintenance
+	If the server needs to be restarted for maintenance or to deploy new code, the website will be unavailable during that time
+
+Scalling issues
+	If a website gets more traffice than the server can handle, it slow down or even crash. can be migigated using loadbalancing
