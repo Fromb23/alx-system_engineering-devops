@@ -6,13 +6,23 @@ sudo apt-get update
 # Install Nginx
 sudo apt-get install -y nginx
 
-# Configure Nginx to listen on port 80
-sudo sed -i 's/\blisten 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+#starting nginx service
+sudo service nginx start
 
-# Create an HTML file containing "Hello World!"
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+#allowing nginx on firewall
+sudo ufw allow 'Nginx HTTP'
 
-# Configure Nginx to serve the HTML file directly
-sudo sed -i 's@^\(.*\)\bindex index.html index.htm index.nginx-debian.html;\(.*\)$@\1index index.html;\2@g' /etc/nginx/sites-available/default
+#Give user ownership to files for easy editing
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chown -R 755 /var/www
+
+#Back up a default index
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backp
+
+#Creating a new index
+echo -e "Hello World" | dd status=none of=/var/www/html/index.nginx-debian.html
 
 # Restart Nginx without using systemctl
+sudo service nginx restart
+
+echo -e "\nCompleted. \n"
