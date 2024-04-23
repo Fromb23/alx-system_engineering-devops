@@ -17,10 +17,12 @@ sudo chown -R "$USER":"$USER" /var/www/html
 sudo chown -R 755 /var/www
 
 #Back up a default index
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backp
+sudo cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backp
+
+sudo dd if=/dev/null of=/var/www/html/index.nginx-debian.html
 
 #Creating a new index
-echo -e "Hello World" | dd status=none of=/var/www/html/index.nginx-debian.html
+echo -e "Hello World" |sudo dd status=none of=/var/www/html/index.nginx-debian.html
 
 # Restart Nginx without using systemctl
 sudo service nginx restart
