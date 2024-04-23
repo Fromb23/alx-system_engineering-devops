@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Check if correct number of arguments is provided
+if [ "$#" -lt 3 ];
+then
+	echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	exit 1
+fi
+
+# Assigning arguments to variables
+FILE_PATH="$1"
+SERVER_IP="$2"
+USERNAME="$3"
+SSH_KEY="$4"
+
+# If PATH_TO_SSH_KEY is not provided, assume default location ~/.ssh/id_rsa
+if [ -z "$SSH_KEY" ]; then
+	SSH_KEY=~/.ssh/id_rsa
+fi
+
+# Transfer file using scp with strict host key checking disabled
+scp -o StrictHostKeyChecking=no -i "$SSH_KEY" "$FILE_PATH" "$USERNAME@$SERVER_IP":~
