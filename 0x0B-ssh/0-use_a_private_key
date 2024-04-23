@@ -5,4 +5,4 @@ server="35.153.19.120"
 
 
 # SSH connection using single char flag
-ssh -i ~/.ssh/id_rsa ubuntu@"$server"
+ssh -i ~/.ssh/school ubuntu@"$server"
