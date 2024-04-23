@@ -1,30 +1,18 @@
 #!/usr/bin/env bash
+# Commands to install Nginx on Web-Sever-01
 
-# Update package index
+# Updating Packages before making Installations
 sudo apt-get update
+sudo apt-get -y install nginx
 
-# Install Nginx
-sudo apt-get install -y nginx
-
-#starting nginx service
-sudo service nginx start
-
-#allowing nginx on firewall
+# Configuring the Uncomplicated Firewall (UFW) to allow incoming traffic for the Nginx HTTP service
 sudo ufw allow 'Nginx HTTP'
 
-#Give user ownership to files for easy editing
-sudo chown -R "$USER":"$USER" /var/www/html
-sudo chown -R 755 /var/www
+# Creating an index.html page
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-#Back up a default index
-sudo cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backp
+# Testing Nginx configurations for Syntax errors
+sudo nginx -t
 
-sudo dd if=/dev/null of=/var/www/html/index.nginx-debian.html
-
-#Creating a new index
-echo -e "Hello World" |sudo dd status=none of=/var/www/html/index.nginx-debian.html
-
-# Restart Nginx without using systemctl
-sudo service nginx restart
-
-echo -e "\nCompleted. \n"
+# Restarting Nginx
+sudo service nginx start
