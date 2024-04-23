@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-
 # SSH connection using single char flag
 ssh -i ~/.ssh/school ubuntu@35.153.19.120
