@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 
-# Server Ip
-server="35.153.19.120"
-
-
 # SSH connection using single char flag
-ssh -i ~/.ssh/school ubuntu@"$server"
+ssh -i ~/.ssh/school ubuntu@35.153.19.120
