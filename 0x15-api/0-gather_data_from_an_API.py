@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-    Fetches and displays employee's TODO list progress.
+Fetches and displays employee's TODO list progress.
 
-    Args:
-        employee_id (int): Employee's ID.
+Args:
+    employee_id (int): Employee's ID.
 
-    Prints:
-        Employee's name, completed tasks, and total tasks.
+Prints:
+    Employee's name, completed tasks, and total tasks.
 """
 
 import requests
