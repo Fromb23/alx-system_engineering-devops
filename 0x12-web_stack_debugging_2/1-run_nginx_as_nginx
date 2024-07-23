@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
+# this script configures an nginx server to run as the user nginx on port 8080
 
-# Run nginx as nginx
-
-sudo sed -i 's/user www-data/user nginx' /etc/nginx/nginx.config
-sudo sed -i 's/80/8080/g' /etc/nginx/sites_available/default
-sudo chown 644 /etc/nginx/nginx.config
-sudo -u nginx service nginx restart
+sed -i.bak 's/#* *user .*/user nginx;/g' /etc/nginx/nginx.conf
+sed -i.bak 's/[^#] *listen *[0-9]\{1,\C}/\tlisten 8080/g' /etc/nginx/sites-available/default
+sed -i 's/[^#] *listen *\[::\]:[0-9]\{1,\}/\tlisten \[::\]:8080/g' /etc/nginx/sites-available/default
