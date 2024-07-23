@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# Run nginx as nginx
+
+sudo sed -i 's/user www-data/user nginx' /etc/nginx/nginx.config
+sudo sed -i 's/80/8080/g' /etc/nginx/sites_available/default
+sudo chown 644 /etc/nginx/nginx.config
+sudo -u nginx service nginx restart
