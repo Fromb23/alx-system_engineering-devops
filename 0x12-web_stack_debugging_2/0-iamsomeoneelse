@@ -2,4 +2,4 @@
 
 # commands that make the whoami command run as the user passed as an argument
 
-sudo -u $1 whoami
+sudo -u "$1" whoami
