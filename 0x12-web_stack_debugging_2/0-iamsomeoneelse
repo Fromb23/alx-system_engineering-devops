@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# commands that make the whoami command run as the user passed as an argument
+
+sudo -u $1 whoami
