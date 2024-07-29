@@ -28,7 +28,7 @@ def get_employee_todo_progress(employee_id):
         {
             "task": task.get('title'),
             "completed": task.get('completed'),
-            "username": employee_name
+            "username": task.get('username')
         }
         for task in tasks
     ]
