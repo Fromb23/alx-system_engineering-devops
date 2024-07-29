@@ -14,7 +14,7 @@ def get_employee_todo_progress(employee_id):
     employee_url = f'{REST_API}/users/{employee_id}'
     employee_response = requests.get(employee_url)
     employee = employee_response.json()
-    employee_name = employee.get('name')
+    employee_name = employee.get('username')
 
     # Get all TODO task to fetch user by ID
     todos_url = f'{REST_API}/todos'
@@ -23,27 +23,17 @@ def get_employee_todo_progress(employee_id):
     tasks = [task for task in todos if task.get('userId') == employee_id]
     completed_tasks = [task for task in tasks if task.get('completed')]
 
-    # Print the progress
-    total_tasks = len(tasks)
-    number_of_done_tasks = len(completed_tasks)
-    print(
-        f'Employee {employee_name} is done with '
-        f'tasks({number_of_done_tasks}/{total_tasks}):'
-    )
-
-    # Print the title of completed tasks
-    for task in completed_tasks:
-        print(f'\t {task["title"]}')
-
     # Export to csv
-    csv_file = f'{employee_id}.csv'
-    with open(csv_file, mode='w', newline='') as file:
-        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+    csv_filename = f'{employee_id}.csv'
+    with open(csv_filename, mode='w', newline='') as csvfile:
         for task in tasks:
-            writer.writerow([
-                employee_id, employee_name, task['completed'], task['title']
-                ])
-    print(f'Tasks have been exported to {csv_file}')
+            completed = task.get('completed')
+            title_task = task.get('title')
+            csvfile.write(
+                '"{}","{}","{}","{}"\n'.format(
+                    employee_id, employee_name, completed, title_task
+                )
+            )
 
 
 if __name__ == '__main__':
