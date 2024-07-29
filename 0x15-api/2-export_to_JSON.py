@@ -14,7 +14,7 @@ def get_employee_todo_progress(employee_id):
     employee_url = f'{REST_API}/users/{employee_id}'
     employee_response = requests.get(employee_url)
     employee = employee_response.json()
-    employee_name = employee.get('name')
+    employee_name = employee.get('username')
 
     # Get all TODO task to fetch user by ID
     todos_url = f'{REST_API}/todos'
@@ -28,7 +28,7 @@ def get_employee_todo_progress(employee_id):
         {
             "task": task.get('title'),
             "completed": task.get('completed'),
-            "username": task.get('username')
+            "username": employee_name
         }
         for task in tasks
     ]
@@ -38,7 +38,6 @@ def get_employee_todo_progress(employee_id):
     json_file = f'{employee_id}.json'
     with open(json_file, 'w') as file:
         json.dump(json_data, file, indent=4)
-        print("Done!!!")
 
 
 if __name__ == '__main__':
