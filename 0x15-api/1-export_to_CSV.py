@@ -25,7 +25,7 @@ def get_employee_todo_progress(employee_id):
 
     # Export to csv
     csv_filename = f'{employee_id}.csv'
-    with open(csv_filename, mode='w', newline='') as csvfile:
+    with open(csv_filename, mode='w') as csvfile:
         for task in tasks:
             completed = task.get('completed')
             title_task = task.get('title')
