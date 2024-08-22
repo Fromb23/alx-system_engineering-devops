@@ -1,12 +1,7 @@
-# Puppet manifest to set file limits for holberton user
-file_line { 'set nofile limit for holberton':
-  path  => '/etc/security/limits.conf',
-  line  => 'holberton soft nofile 4096',
-  match => '^holberton.*nofile',
-}
+# Change the OS configuration so that it is possible to login with the
+# holberton user and open a file without any error message.
 
-file_line { 'set hard nofile limit for holberton':
-  path  => '/etc/security/limits.conf',
-  line  => 'holberton hard nofile 4096',
-  match => '^holberton.*nofile',
+exec {'OS security config':
+  command => 'sed -i "s/holberton/foo/" /etc/security/limits.conf',
+  path    => '/usr/bin/env/:/bin/:/usr/bin/:/usr/sbin/'
 }
